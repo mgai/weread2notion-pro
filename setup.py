@@ -7,7 +7,7 @@ setup(
         "requests",
         "pendulum",
         "retrying",
-        "notion-client",
+        "notion-client<3",
     ],
     entry_points={
         "console_scripts": [
