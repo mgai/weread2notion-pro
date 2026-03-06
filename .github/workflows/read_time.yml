@@ -2,6 +2,12 @@ name: read time sync
 
 on:
   workflow_dispatch:
+    inputs:
+      # Optional: define inputs if needed
+      branch_name:
+        description: 'Branch to run workflow on'
+        required: true
+        default: 'main'
   schedule:
     - cron: "0 */3 * * *"
 concurrency:

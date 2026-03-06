@@ -2,6 +2,12 @@ name: weread note sync
 
 on:
   workflow_dispatch:
+    inputs:
+      # Optional: define inputs if needed
+      branch_name:
+        description: 'Branch to run workflow on'
+        required: true
+        default: 'main'
   schedule:
     - cron: '0 */2 * * *'  # 每 2 小时执行一次
 concurrency:
