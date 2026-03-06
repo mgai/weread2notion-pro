@@ -1,7 +1,7 @@
 requests
 notion-client
-github-heatmap
 retrying
 pendulum
 python-dotenv
-# weread2notionpro - removed to use local cookie auth
+# weread2notionpro installed locally via `pip install .` (cookie auth fork)
+# github-heatmap removed: no longer supports Cookie auth
