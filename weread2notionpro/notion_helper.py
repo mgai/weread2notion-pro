@@ -132,9 +132,15 @@ class NotionHelper:
 
     def update_book_database(self):
         """更新数据库"""
+        if self.book_database_id is None:
+            logging.warning("book_database_id is None, skipping update_book_database")
+            return
         response = self.client.databases.retrieve(database_id=self.book_database_id)
         id = response.get("id")
         properties = response.get("properties")
+        if properties is None:
+            logging.warning("No properties found in book database response, skipping update")
+            return
         update_properties = {}
         if (
             properties.get("阅读时长") is None
